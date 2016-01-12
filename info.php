@@ -43,7 +43,7 @@
 <body>
 <p>Tere tulemast arvuti komponentide lehele!
 Uute komponentide lisamiseks täida allolevad väljad.
-Olemasolevate komponentide vaatamiseks vajuta siia </p>
+Olemasolevate komponentide vaatamiseks vajuta <a href="http://localhost:5555/~earis/eksam/table.php">siia</a>. </p>
 
 <h2>Lisa komponendid</h2>
 <form action="info.php" method="post">
