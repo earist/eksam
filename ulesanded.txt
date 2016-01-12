@@ -11,4 +11,7 @@ CREATE TABLE components(
 	price INT
 );
 
-1. data.php, functions.php ja table.php
+1-2. info.php, functions.php ja table.php
+3. class ja dropdown
+
+echo "<td>".$component_array[$i]->id."</td>";

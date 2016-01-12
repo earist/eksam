@@ -36,7 +36,7 @@
 			$component->price = $price;
 			array_push($component_array, $component);
 		}
-	
+		
 		return $component_array;
 		$stmt->close();
 		$mysqli->close();
@@ -44,22 +44,19 @@
 	
 	function deleteComponent($id){
 		$mysqli = new mysqli($GLOBALS["servername"], $GLOBALS["server_username"], $GLOBALS["server_password"], $GLOBALS["database"]);
-		
 		$stmt = $mysqli->prepare("UPDATE components SET deleted=NOW() WHERE id=?");
 		$stmt->bind_param("i", $id);
 		if($stmt->execute()){
 			header("Location: table.php");
-			
 		}
 		$stmt->close();
 		$mysqli->close();
 		
 	}
-	function updateComponents($id, $component_name, $price){
+	function updateComponent($id, $component_name, $price){
 		$mysqli = new mysqli($GLOBALS["servername"], $GLOBALS["server_username"], $GLOBALS["server_password"], $GLOBALS["database"]);
-		
 		$stmt = $mysqli->prepare("UPDATE components SET component_name=?, price=? WHERE id=?");
-		$stmt->bind_param("iss", $id, $component_name, $price);
+		$stmt->bind_param("ssi", $component_name, $price, $id);
 		if($stmt->execute()){
 			//header("Location: table.php");
 		}

@@ -5,8 +5,9 @@
 		deleteComponent($_GET["delete"]);
 	}
 	if(isset($_POST["save"])){
-		updateComponents($_POST["id"], $_POST["component_name"], $_POST["price"]);
+		updateComponent($_POST["id"], $_POST["component_name"], $_POST["price"]);
 	}
+	
 	$component_array = getComponentInfo();
 ?>
 
@@ -31,12 +32,14 @@
 				
 				echo "<tr>";
 				echo "<form action='table.php' method='post'>";
+				echo "<input type='hidden' name='id' value='".$component_array[$i]->id."'>";
 				echo "<td>".$component_array[$i]->id."</td>";
-				echo "<td>".$component_array[$i]->component_name."</td>";
-				echo "<td>".$component_array[$i]->price."</td>";
+				echo "<td><input type='text' name='component_name' value='".$component_array[$i]->component_name."'></td>";
+				echo "<td><input type='text' name='price' value='".$component_array[$i]->price."'></td>";
 				echo "<td><a href='table.php'>Cancel</a></td>";
 				echo "<td><input type='submit' name='save'></td>";
 				echo "</tr>";
+				echo "</form>";
 			}else{
 				echo "<tr>";
 				echo "<td>".$component_array[$i]->id."</td>";
