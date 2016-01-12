@@ -1,9 +1,13 @@
 <?php
 	require_once("functions.php");
-	require_once("packet.class.php");
+	require_once("FullPacket.class.php");
 	
 	$FullPacket = new FullPacket ($mysqli, $_SESSION["logged_in_user_id"]);
 	
+	if(isset($_GET["new_dd_selection"])) {
+		
+		$add_new_component = $FullPacket->addComponent($_GET["new_dd_selection"]);
+	}
 ?>
 	<h2>Vali soovitud komponent</h2>
   <?php if(isset($add_new_component->error)): ?>
@@ -25,4 +29,4 @@
 	<input type="submit">
 </form>
 <br><br>
-<?=$FullPacket->get();?>
+<?=$FullPacket->getComponentInfo();?>

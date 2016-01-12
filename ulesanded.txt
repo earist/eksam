@@ -11,6 +11,8 @@ CREATE TABLE components(
 	price INT
 );
 
+ALTER TABLE components ADD deleted DATE;
+
 1-2. info.php, functions.php ja table.php
 3. class ja dropdown
 
