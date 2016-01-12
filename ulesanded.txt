@@ -1,0 +1,14 @@
+* arvuti komponendid ja iga komponendi hind
+* komponentide andmebaas
+* komponentide muutmine ja kustutamine
+* enda soovi järgi kogu arvutikompleti tegemine väiksematest komponentidest
+
+NB! kõik muutujad ingliskeelsed
+
+CREATE TABLE components(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	component_name VARCHAR(60),
+	price INT
+);
+
+1. data.php, functions.php ja table.php
